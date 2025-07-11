@@ -15,3 +15,9 @@ type-check:
 .PHONY: install
 install:
 	poetry install
+
+test:
+	poetry run pytest --html=reports/testreports/test_report.html --self-contained-html
+
+coverage:
+	poetry run pytest --cov=political_party_analysis --cov-report=html:reports/codecoverage
